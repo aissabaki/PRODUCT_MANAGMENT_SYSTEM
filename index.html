@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/b9b530dff2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Basic Product managment system</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/electronics.png">
+  </head>
+  <body>
+    <section class="main-section">
+      <div class="header">
+        <h1 class="header_title">Basic Product managment system</h1>
+        <p class="header_desc">
+          Electronics store
+          <img
+            src="assets/images/electronics logo.png"
+            alt="electronics logo"
+          />
+        </p>
+      </div>
+      <div class="form-container">
+        <form>
+          <input type="text" placeholder="Title" id="title" />
+          <div class="price">
+            <input
+              type="number"
+              onkeyup="getTotal()"
+              placeholder="price"
+              id="price"
+            />
+
+            <input
+              type="number"
+              onkeyup="getTotal()"
+              placeholder="taxes"
+              id="taxes"
+            />
+            <input
+              type="number"
+              onkeyup="getTotal()"
+              placeholder="discount"
+              id="discount"
+            />
+            <span class="total">Total:<span id="total">0</span>$</span>
+          </div>
+          <div>
+            <input type="number" placeholder="count" id="count" />
+            <div class="error" id="countError">
+              please enter a number of products
+            </div>
+          </div>
+          <div class="categories">
+            <select id="category" onchange="selectedCategory()">
+              <option value="" selected disabled hidden>Category</option>
+              <option value="TV & Home Theater">TV & Home Theater</option>
+              <option value="Computers & Tablets">Computers & Tablets</option>
+              <option value="Cell Phones">Cell Phones</option>
+              <option value="Cameras & Camcorders">Cameras & Camcorders</option>
+              <option value="Audio">Audio</option>
+              <option value="Wearable Technology">Wearable Technology</option>
+              <option value="Video Games">Video Games</option>
+              <option value="Toys, Games & Collectibles">
+                Toys, Games & Collectibles
+              </option>
+            </select>
+          </div>
+        </form>
+        <div class="btn_center">
+          <button class="btn" id="create">Create</button>
+        </div>
+        <div class="search-container" id="searchContainer">
+          <div class="btn_center">
+            <button
+              class="btn"
+              id="titleSearch"
+            >
+              Search by title
+            </button>
+            <button
+              class="btn"
+              id="categorySearch"
+            >
+              Search by catygory
+            </button>
+            <div class="search" id="search">
+              <input
+                class="search-input"
+                type="text "
+                placeholder="search"
+                id="searchInput"
+                onkeyup="search(this.value)"
+              />
+              <div class="pills" id="searchPills"></div>
+            </div>
+            <div class="btn_center">
+              <button class="btn sm-padding back" id="back">See all products</button>
+              </div>
+          </div>
+        </div>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>PRICE</th>
+              <th>TAXES</th>
+              <th>DISCOUNT</th>
+              <th>TOTAL</th>
+              <th>CATEGORY</th>
+              <th>UPDATE</th>
+              <th>DELETE</th>
+            </tr>
+            <tbody id="tBody">
+              
+            </tbody>
+            <div class="no-result" id="noResult"></div>
+          </table>
+        </div>
+        <div class="btn_center" id="deleteContainer"></div>
+      </div>
+    </section>
+    <script src="assets/main.js"></script>
+  </body>
+</html>
