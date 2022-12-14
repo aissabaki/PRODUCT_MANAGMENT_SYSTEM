@@ -11,13 +11,15 @@ body {
   margin: 0%;
   text-align: center;
   width: 100vw;
-  padding: 2rem;
+  padding: 2rem .5rem;
 }
 .header_title,
 .header_desc {
+  max-width: 90%;
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  text-align: center;
 }
 .header_desc {
   position: relative;
@@ -35,7 +37,7 @@ body {
 .form-container {
   position: relative;
   height: 70%;
-  width: 55vw;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,4 +205,13 @@ th {
 .no-result {
   margin: 1rem;
   color: #000000;
+}
+
+
+
+/*tabllete , laptops, desktops*/
+@media (min-width: 768px){
+  .form-container {
+    width: 60vw;
+  }
 }
